@@ -10,4 +10,4 @@ Service layer is designed using SpringBoot framework along with maven dependency
 
 Similar to the service layer, Micro-service layer is also designed using SpringBoot framework and maven and is hosted on a separate apache tomcat server. It uses JPA/Hibernate framework to communicate with the database server.
 
-Note: For instructions about How to run the project, Please refer to the Readme.txt.
+Note: For instructions about How to run the project?, Please refer to the Readme.txt.
