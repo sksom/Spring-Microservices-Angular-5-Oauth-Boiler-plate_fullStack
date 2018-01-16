@@ -1,0 +1,6 @@
+<div class="row">
+  <div class="col-xs-12">
+    <app-shared-registry *ngFor="let eachRegistry of registryList" [registry]="eachRegistry"
+                         [id]="eachRegistry.registryId"></app-shared-registry>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onAddItem()">Add Item</button>
+    <button class="pull-right btn btn-dropbox" (click)="shareRegistry()"><span
+      class="glyphicon glyphicon-share-alt"></span> Share It
+    </button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-registry-item *ngFor="let eachItem of itemList; let i = index" [item]="eachItem"
+                       [id]="eachItem.itemId"></app-registry-item>
+  </div>
+</div>

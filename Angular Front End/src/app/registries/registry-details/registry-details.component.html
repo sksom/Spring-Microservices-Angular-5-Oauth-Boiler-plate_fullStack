@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-11" *ngIf="registry">
+    <app-registry-item-list [itemList]="itemList"
+                            [registryId]="registry.registryId"></app-registry-item-list>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-11" *ngIf="!registry">
+    <app-add-registry-item></app-add-registry-item>
+  </div>
+</div>

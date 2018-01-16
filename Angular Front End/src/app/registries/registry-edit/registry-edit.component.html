@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-9">
+    <h3 class="text-center ">New Registry Information </h3>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Registry Name</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="name" id="name" required [(ngModel)]="newRegistry.registryName"
+                 placeholder="Enter Registry Name">
+        </div>
+        <div class="col-sm-2">
+          <button class="btn btn-success" type="submit" [disabled]="f.invalid || selectedItemList.length===0">Create
+            Registry
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10">
+    <app-user-item-list></app-user-item-list>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" [routerLink]="['new']">New Registry</button>
+  </div>
+
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-registry *ngFor="let eachRegistry of registryList" [registry]="eachRegistry"
+                  [id]="eachRegistry.registryId"></app-registry>
+
+  </div>
+</div>

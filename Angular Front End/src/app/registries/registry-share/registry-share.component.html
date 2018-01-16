@@ -1,0 +1,33 @@
+<p *ngIf="registryId">
+  registry-share works! with {{registryId}}
+</p>
+
+<button class="btn btn-primary" (click)="shareToPublic()">Share to Public</button>
+
+<button class="btn btn-primary" (click)="sharePublic=!sharePublic">Share to Specific Users</button>
+
+<div class="row" *ngIf="!sharePublic">
+  <div class="col-xs-10 col-xs-offset-1">
+    <div class="table-responsive" style="margin-top: 30px;">
+      <table class="row-border hover table-responsive">
+        <thead>
+        <tr>
+          <th>Select</th>
+          <th>User</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of userList">
+          <td class="col-xs-1">
+            <input type="checkbox" style="padding: 0px"
+                   (change)="addToSelectedUserList($event.target.checked, user.userId)"/>
+          </td>
+          <td class="col-md-4">{{user.username}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary" (click)="shareToUsers()"> Share Now!</button>
+    </div>
+  </div>
+</div>
+
