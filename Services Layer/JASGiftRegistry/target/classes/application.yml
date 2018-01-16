@@ -1,0 +1,55 @@
+security:
+  require-ssl: true
+  oauth2:
+    client:
+      clientId: 228657039383-uel9b7qqfpgnidb19ut6gllnephec674.apps.googleusercontent.com
+      clientSecret: ZCQF9bfRyEKJJJ7oCZa8zAkL
+      accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+      userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+      clientAuthenticationScheme: form
+      scope: openid,email,profile
+    resource:
+      userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+      preferTokenInfo: true
+server:
+  port: 8443
+  compression:
+    enabled: 'true'
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+    min-response-size: '0'
+  connection-timeout: '10'
+  ssl:
+    key-store: keystore.p12
+    key-store-password: changeit
+    key-store-type: PKCS12
+    key-alias: tomcat
+spring:
+  datasource:
+    password: root
+    tomcat:
+      test-while-idle: 'true'
+      validationQuery: SELECT 1
+    url: jdbc:mysql://localhost:3306/gift?useSSL=true
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: 'true'
+  mail:
+    host: smtp.gmail.com
+    username: athershareefvce44@gmail.com
+    password: devtest44
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+logging:
+  level:
+    root: debug
