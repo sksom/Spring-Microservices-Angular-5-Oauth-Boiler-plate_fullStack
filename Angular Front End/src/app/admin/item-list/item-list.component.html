@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="table-responsive" style="margin-top: 30px;">
+    <table id="itemListTable" class="table bordered highlight">
+      <thead>
+      <tr>
+        <th>Select</th>
+        <th></th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Category</th>
+        <th>Price</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of itemList">
+        <td>
+          <input hidden="hidden" name="id"/>
+          <input type="checkbox" [checked]="allChecked" (change)="updateRemoveItemList($event.target.checked, item)"/>
+        </td>
+        <td class="col-md-2"><a (click)="onSelect(item)" style="cursor:pointer"><img class="img-responsive"
+                                                                                     src="{{item.imageUrl}}"></a></td>
+        <td class="col-md-3"><a (click)="onSelect(item)" style="cursor:pointer">{{item.name}}</a></td>
+        <td class="col-md-2">{{item.brand}}</td>
+        <td class="col-md-2">{{item.category}}</td>
+        <td class="col-md-2">{{item.agegroup}}</td>
+        <td class="col-md-2">{{item.price| currency}}</td>
+        <td>
+          <input hidden="hidden" name="id"/>
+
+          <button type="button" class="btn btn-link btn-xs" (click)="removeOne(item)" value="delete">
+            <span class="glyphicon glyphicon-trash"> </span>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="btn btn-primary" id="deleteSelected" (click)="removeSelectedItems()">Delete Selected</button>
+</div>

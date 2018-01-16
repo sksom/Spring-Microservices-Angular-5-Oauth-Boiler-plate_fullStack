@@ -1,0 +1,83 @@
+<div class="container">
+  <div [hidden]="itemAdded">
+    <br><br>
+    <h3 class="text-center ">New Item Information </h3>
+    <br>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Item Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="name" id="name" required [(ngModel)]="newItem.name"
+                 placeholder="Enter Item Name">
+        </div>
+        <br><br>
+      </div>
+      <div class="form-group row">
+        <label for="price" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="price" name="price" required [(ngModel)]="newItem.price"
+                 placeholder="Enter price">
+        </div>
+        <br><br>
+      </div>
+      <div class="form-group row">
+        <label for="brand" class="col-sm-2 col-form-label">Brand</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="brand" id="brand" required [(ngModel)]="newItem.brand"
+                 placeholder="Enter Brand">
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group row">
+        <div class="col-sm-2 "><label for="age">Select Age group:</label></div>
+        <div class="col-sm-10">
+
+          <select class="form-control" id="age" name="agegroup" [(ngModel)]="newItem.agegroup">
+            <option>Toddlers</option>
+            <option>Kids</option>
+            <option>Teens</option>
+            <option>Adults</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="form-group row">
+        <div class="col-sm-2"><label for="category">Select Category:</label></div>
+        <div class="col-sm-10">
+
+          <select class="form-control" id="category" name="category" [(ngModel)]="newItem.category">
+            <option>Home and Kitchen</option>
+            <option>Electronics and Computers</option>
+            <option>Clothing and Accessories</option>
+            <option>Sports and Outdoor</option>
+            <option>Toys, Kids and Baby</option>
+          </select>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="form-group row">
+        <label for="url" class="col-sm-2 col-form-label">Image Url</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="url" name="url" required [(ngModel)]="newItem.imageUrl"
+                 placeholder="Enter Image Url">
+        </div>
+      </div>
+
+      <br><br>
+
+      <div class="container-fluid ">
+        <div class="col-md-20 text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+  <div class="row text-center" [hidden]="!itemAdded">
+    <h3>Item added successfully!</h3>
+  </div>
+</div>

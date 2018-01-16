@@ -1,0 +1,22 @@
+<div class="col-xs-6 col-sm-5 col-md-3 col-md-offset-2">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-success" type="submit" [disabled]="userForm.invalid">Update details</button>
+        <button class="btn btn-danger" type="button" routerLink="/sharedRegistries">Cancel</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="username">User Name</label>
+      <input type="text" id="username" formControlName="username" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">E Mail</label>
+      <input type="email" id="email" formControlName="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" class="form-control">
+    </div>
+  </form>
+</div>
